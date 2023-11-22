@@ -5,14 +5,11 @@
 
 ## Сравнение инференса
 Устройство: Raspberry Pi 4B (8 GB RAM, 1.5 GHz CPU)
-| **Framework**       | **Model**    | **Task Type** | **FPS** | **Average inference time, ms** |
-|---------------------|--------------|---------------|---------|--------------------------------|
-| NCNN                | YOLO v8 nano | detection     | 2.13    | 469                            |
-| NCNN                | YOLO v8 nano | segmentation  | 1.66    | 603                            |
-| PyTorch             | YOLO v8 nano | detection     | 1.12    | 892                            |
-| PyTorch             | YOLO v8 nano | segmentation  | 1.09    | 913                            |
-| PyTorch+Torchscript | YOLO v8 nano | detection     | -       | 1322                           |
-| ONNX Runtime        | YOLO v8 nano | detection     | -       | 526                            |
-| OpenVINO            | YOLO v8 nano | detection     | -       | 1036                           |
+| **Framework**  | **Model**   | **Image Size** | **Inference Time (ms)** | **FPS**   |
+|------------|---------|------------|---------------------|-------|
+|  PyTorch   | YOLOv8n | 640x640    | 1320.4201          | 0.76
+|    **NCNN**    | **YOLOv8n** | **640x640**    | **534.2817**          | **1.87**
+|     ORT    | YOLOv8n | 640x640    | 745.9199           | 1.34
+|  OpenVINO  | YOLOv8n | 640x640    | 1036.2683          | 0.96
 
 В MVP используется NCNN как демонстрирующий наибольшую производительность на ARM.

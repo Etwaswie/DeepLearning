@@ -5,6 +5,9 @@
         },
         "ncnn": {
             "model_dir": "models/yolov8/ncnn/best_ncnn_model"
+        },
+        "onnx": {
+            "weights": "models/yolov8/onnx/best.onnx"
         }
     }
 }
