@@ -1,0 +1,10 @@
+{
+    "yolov8n": {
+        "pytorch": {
+            "weights": "models/yolov8/pytorch/best.pt"
+        },
+        "ncnn": {
+            "model_dir": "models/yolov8/ncnn/best_ncnn_model"
+        }
+    }
+}
