@@ -12,6 +12,7 @@ SAMPLE_VIDEO_NAME = 'test_2sec'
 SAMPLE_IMAGE_NAME = 'sample_2'
 
 def process_video(video):
+    clear_output_directory()
     NCNN_MODEL.simple_predict(video, save=True)
     output_files = glob('runs/detect/predict/*.avi')
     if output_files:
@@ -20,14 +21,13 @@ def process_video(video):
         return None
 
 def process_image(image):
+    clear_output_directory()
     NCNN_MODEL.simple_predict(image, save=True)
     output_files = glob('runs/detect/predict/*.jpg')
     if output_files:
         return output_files[0]
     else:
         return None
-
-clear_output_directory()
 
 # Gradio Interface
 with gr.Blocks() as demo:
