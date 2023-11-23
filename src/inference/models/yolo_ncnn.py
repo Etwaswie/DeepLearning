@@ -16,4 +16,4 @@ class YoloNCNN:
         """
         Returns YOLO.predict for NCNN inference
         """
-        return self.model.predict(input, half=False)
+        return self.model.predict(input, half=False, **kwargs)
