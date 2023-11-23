@@ -4,9 +4,8 @@ from pathlib import Path
 
 import cv2
 import numpy as np
-#from ultralytics.yolo.utils.ops import scale_image
 
-from models.yolo_ncnn import YoloNCNN
+from .models.yolo_ncnn import YoloNCNN
 
 sys.path.append(str(Path(__file__).resolve().parents[2].joinpath('configs')))
 from models_configs.model_configurator import ModelConfig
@@ -66,6 +65,3 @@ def detect_draw_boxes(input_image):
         cv2.rectangle(input_image, r[0][:2], r[0][2:], (255, 255, 255), 2)
         cv2.putText(input_image, r[1], (r[0][0], r[0][1]), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 0, 0), 2, cv2.LINE_AA)
     return input_image
-
-
-cv2.imwrite('tesfromrepo_det.png', detect_draw_boxes(cv2.imread('/home/asesorov/itmo/DeepLearning/samples/sample_2.jpg')))
