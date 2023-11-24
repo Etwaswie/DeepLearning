@@ -7,10 +7,10 @@ import numpy as np
 from ultralytics import YOLO
 
 sys.path.append(str(Path(__file__).resolve().parents[1].joinpath('inference')))
-from inference_yolo_ncnn import detect_get_bounding_boxes
+from inference_yolo_ncnn import detect_get_bounding_boxes  # noqa
 sys.path.append(str(Path(__file__).resolve().parents[2].joinpath('configs')))
-from models_configs.model_configurator import ModelConfig
-from logger_conf import configure_logger
+from models_configs.model_configurator import ModelConfig  # noqa
+from logger_conf import configure_logger  # noqa
 
 configure_logger()
 
@@ -22,7 +22,7 @@ def benchmark_model(model, model_name, num_iterations, test_data):
 
     for _ in range(num_iterations):
         start_time = time.time()
-        res = model(test_data)
+        res = model(test_data)  # noqa
         end_time = time.time()
         inference_time = (end_time - start_time) * 1000  # Convert to milliseconds
         total_time += inference_time
@@ -62,6 +62,7 @@ def main():
     log.info(f'|     ORT    | YOLOv8n | 640x640    | {ort_res[2]}           | {ort_res[1]}')
 
     log.info('===============================================')
+
 
 if __name__ == "__main__":
     main()
