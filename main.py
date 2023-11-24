@@ -29,7 +29,7 @@ def process_image(image):
     else:
         return None
 
-# Gradio Interface
+
 with gr.Blocks() as demo:
     gr.Markdown("# Detection of Road Signs")
     gr.Markdown("To start the process, upload a video (mp4) or an image (jpg) file.")
@@ -45,7 +45,7 @@ with gr.Blocks() as demo:
         theme="huggingface",
         title="Video Processing"
     )
-    
+
     image_interface = gr.Interface(
         fn=process_image,
         inputs=gr.Image(type="pil"),

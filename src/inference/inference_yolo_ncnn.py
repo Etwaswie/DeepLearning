@@ -3,13 +3,12 @@ import logging as log
 from pathlib import Path
 
 import cv2
-import numpy as np
 
 from .models.yolo_ncnn import YoloNCNN
 
 sys.path.append(str(Path(__file__).resolve().parents[2].joinpath('configs')))
-from models_configs.model_configurator import ModelConfig
-from logger_conf import configure_logger
+from models_configs.model_configurator import ModelConfig  # noqa
+from logger_conf import configure_logger  # noqa
 
 
 configure_logger()
